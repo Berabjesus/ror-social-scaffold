@@ -41,15 +41,15 @@ gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-   gem 'rspec-rails'
-   gem 'capybara'
-  gem 'shoulda-matchers'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :test do
-  gem 'rspec'
   gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
+  gem 'rspec'
 end
 
 group :development do
