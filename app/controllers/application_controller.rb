@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
     friendship.nil? ? nil : friendship.id
   end
-  
+
   protected
 
   def configure_permitted_parameters
