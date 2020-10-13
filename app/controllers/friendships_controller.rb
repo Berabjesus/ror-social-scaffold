@@ -5,16 +5,32 @@ class FriendshipsController < ApplicationController
 
   def create
     @friendship = Friendship.new(friendship_params)
-    if @friendship.valid? && @friendship.save
+    if  new_request? && @friendship.valid? && @friendship.save 
+      redirect_to users_path
+    elsif !new_request?
+      redirect_to users_path, alert: 'You have already sent a request'
+    else
+      render 'users/index'
+    end
+  end
+
+  def destroy
+    @friendship = Friendship.find(params[:id])
+
+    if  !@friendship.nil? && @friendship.destroy
       redirect_to users_path
     else
-      render 'users#show'
+      render 'users/index'
     end
   end
 
   private
 
+  def new_request?
+    !current_user.request_exists?(User.find_by(id: params[:friendship][:friend_id]))
+  end
+
   def friendship_params
-    params.require(:friendship).permit(:user, :friend_id, :confirmed)
+    params.require(:friendship).permit(:user_id, :friend_id, :confirmed)
   end
 end
