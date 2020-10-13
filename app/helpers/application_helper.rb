@@ -25,6 +25,8 @@ module ApplicationHelper
       else
         link
       end
+    elsif current_user != user
+      link_to 'Unfriend', friendship_path(controller: 'friendships', action: 'delete', id: find_friendship(user.id, current_user.id) ), method: :delete, class:' btn btn-warning'
     end
   end
 end

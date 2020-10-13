@@ -1,5 +1,8 @@
-<section class="user-section">
+<section class="user-section d-flex flex-column border p-3">
   <h2><%= "Name: #{@user.name}" %></h2>
+  <div class="d-flex justify-content-between">
+    <%= add_friend_btn @user%>
+  </div>
   <article class="timeline">
     <h3>Recent posts:</h3>
     <ul class="posts">
