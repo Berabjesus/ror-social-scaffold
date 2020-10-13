@@ -39,6 +39,6 @@ class User < ApplicationRecord
   end
 
   def request_exists?(user)
-    pending_friends.include?(user)
+    true if pending_friends.include?(user) || friend_requests.include?(user)
   end
 end
