@@ -18,15 +18,15 @@ RSpec.describe Friendship, type: :model do
 
     it 'is not valid without a user' do
       subject.user_id = ''
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
 
     it 'is not valid without a friend' do
       subject.friend_id = ''
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
   end
 
-  it { should belong_to(:user) }
-  it { should belong_to(:friend) }
+  it { is_expected.to belong_to(:user) }
+  it { is_expected.to belong_to(:friend) }
 end

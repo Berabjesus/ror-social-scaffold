@@ -6,10 +6,8 @@ class ApplicationController < ActionController::Base
 
   def find_friendship(user_id, friend_id)
     friendship = Friendship.find_by(user_id: user_id, friend_id: friend_id)
-    if friendship.nil?
-      friendship = Friendship.find_by(user_id: friend_id, friend_id: user_id)
-    end
-    return friendship.id    
+    friendship = Friendship.find_by(user_id: friend_id, friend_id: user_id) if friendship.nil?
+    friendship.id
   end
 
   protected

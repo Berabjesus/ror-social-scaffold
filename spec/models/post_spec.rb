@@ -16,13 +16,13 @@ RSpec.describe Post do
 
     it 'Content cannot be longer than 1,000' do
       subject.content = '0' * 1001
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
   end
 
   describe 'Associations', type: :model do
-    it { should belong_to(:user) }
-    it { should have_many(:comments) }
-    it { should have_many(:likes) }
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to have_many(:comments) }
+    it { is_expected.to have_many(:likes) }
   end
 end

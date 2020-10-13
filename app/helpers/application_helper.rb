@@ -16,17 +16,17 @@ module ApplicationHelper
     end
   end
 
-  def add_friend_btn user
+  def add_friend_btn(user)
     if !current_user.friend?(user) && current_user != user
-      link = capture { link_to 'Add as a Friend', friendships_path(controller: 'friendships', action: 'create', friendship: {user_id: current_user, friend_id: user, confirmed: false}), method: :post, class: ' btn btn-success mr-2'}
+      link = capture { link_to 'Add as a Friend', friendships_path(controller: 'friendships', action: 'create', friendship: { user_id: current_user, friend_id: user, confirmed: false }), method: :post, class: ' btn btn-success mr-2' }
       if current_user.request_exists?(user)
-        link = capture { link_to 'Request Sent', users_path , class: 'disabled btn btn-success mr-2'}
-        link << capture { link_to 'Cancle Request', friendship_path(controller: 'friendships', action: 'delete', id: find_friendship(current_user.id, user.id) ), method: :delete, class:' btn btn-warning' }
+        link = capture { link_to 'Request Sent', users_path, class: 'disabled btn btn-success mr-2' }
+        link << capture { link_to 'Cancle Request', friendship_path(controller: 'friendships', action: 'delete', id: find_friendship(current_user.id, user.id)), method: :delete, class: ' btn btn-warning' }
       else
         link
       end
     elsif current_user != user
-      link_to 'Unfriend', friendship_path(controller: 'friendships', action: 'delete', id: find_friendship(user.id, current_user.id) ), method: :delete, class:' btn btn-warning'
+      link_to 'Unfriend', friendship_path(controller: 'friendships', action: 'delete', id: find_friendship(user.id, current_user.id)), method: :delete, class: ' btn btn-warning'
     end
   end
 end

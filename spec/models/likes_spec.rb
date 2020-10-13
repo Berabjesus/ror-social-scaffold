@@ -17,7 +17,7 @@ RSpec.describe Like do
   end
 
   describe 'Associations', type: :model do
-    it { should belong_to(:user) }
-    it { should belong_to(:post) }
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:post) }
   end
 end

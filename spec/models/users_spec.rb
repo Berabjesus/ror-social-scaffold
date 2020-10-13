@@ -10,9 +10,9 @@ RSpec.describe User do
   end
 
   describe 'validations' do
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:email) }
-    it { should validate_presence_of(:password) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:email) }
+    it { is_expected.to validate_presence_of(:password) }
 
     it 'is valid with valid attribute' do
       expect(subject).to be_valid
@@ -20,30 +20,30 @@ RSpec.describe User do
 
     it 'The name of the user should exist' do
       subject.name = ''
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
 
     it 'The name of the user should not be longer than 20 characters' do
       subject.name = 'weiruwieruiowueriuioweuriuwioeurwioeriouiowerui'
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
 
     it 'The email should exist' do
       subject.email = ''
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
 
     it 'The email should have the right format' do
       subject.email = 'hello'
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
   end
 
   describe 'Associations', type: :model do
-    it { should have_many(:posts) }
-    it { should have_many(:comments) }
-    it { should have_many(:likes) }
-    it { should have_many(:friendships) }
-    it { should have_many(:inverse_friendships) }
+    it { is_expected.to have_many(:posts) }
+    it { is_expected.to have_many(:comments) }
+    it { is_expected.to have_many(:likes) }
+    it { is_expected.to have_many(:friendships) }
+    it { is_expected.to have_many(:inverse_friendships) }
   end
 end

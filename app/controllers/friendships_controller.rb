@@ -5,7 +5,7 @@ class FriendshipsController < ApplicationController
 
   def create
     @friendship = Friendship.new(friendship_params)
-    if  new_request? && @friendship.valid? && @friendship.save 
+    if new_request? && @friendship.valid? && @friendship.save
       redirect_to users_path
     elsif !new_request?
       redirect_to users_path, alert: 'You have already sent a request'
@@ -14,20 +14,17 @@ class FriendshipsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def update
     @friendship = Friendship.find_by(id: params[:id])
-    if @friendship.confirmed == false && @friendship.update(confirmed: true)
-      redirect_to users_path
-    end
+    redirect_to users_path if @friendship.confirmed == false && @friendship.update(confirmed: true)
   end
 
   def destroy
     @friendship = Friendship.find(params[:id])
 
-    if  !@friendship.nil? && @friendship.destroy
+    if !@friendship.nil? && @friendship.destroy
       redirect_to users_path
     else
       render 'users/index'

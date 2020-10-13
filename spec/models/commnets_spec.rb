@@ -12,16 +12,16 @@ RSpec.describe Comment do
   end
 
   describe 'validations' do
-    it { should validate_presence_of(:content) }
+    it { is_expected.to validate_presence_of(:content) }
 
     it 'The content of the comment length < 200' do
       subject.content = '0' * 205
-      expect(subject).to_not be_valid
+      expect(subject).not_to be_valid
     end
   end
 
   describe 'Associations', type: :model do
-    it { should belong_to(:user) }
-    it { should belong_to(:post) }
+    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:post) }
   end
 end
