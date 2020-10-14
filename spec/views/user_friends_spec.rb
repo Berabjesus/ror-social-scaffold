@@ -28,7 +28,6 @@ RSpec.describe 'Main flow', type: :system do
   end
   describe 'Friend request' do
     it 'path is correct' do
-
       # Access Home Page
       visit('/')
 
@@ -82,7 +81,6 @@ RSpec.describe 'Main flow', type: :system do
       sleep 1
       click_link('Accept Request')
       sleep 1
-
     end
   end
   describe 'create post' do
