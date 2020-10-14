@@ -24,20 +24,20 @@ Postgres: >=9.5
 
 ### Setup
 
-Instal gems with:
+### Instal gems with:
 
 ```
 bundle install
 ```
 
-Setup database with:
+### Setup database with:
 
 ```
    rails db:create
    rails db:migrate
 ```
 
-Install Bootstrap:
+### Install Bootstrap:
 
 ```yarn add bootstrap jquery popper.js```
 
