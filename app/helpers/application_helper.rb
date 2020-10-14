@@ -22,7 +22,7 @@ module ApplicationHelper
     success_btn = 'btn btn-success mr-2'
     warning_btn = 'btn btn-warning'
     add_friendship_param = { friendship: { user_id: current_user, friend_id: user, confirmed: false } }
-    delete_param = { id: find_friendship(user.id, current_user.id) }
+    delete_param = { id: user.id}
     if !current_user.friend?(user) && !current_user.request_exists?(user)
       link_to 'Add as a Friend', friendships_path(add_friendship_param), method: :post, class: success_btn
     elsif !current_user.request_exists?(user)
