@@ -37,6 +37,10 @@ Setup database with:
    rails db:migrate
 ```
 
+Install Bootstrap:
+
+```yarn bootstrap jquery popper.js```
+
 ### Github Actions
 
 To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
