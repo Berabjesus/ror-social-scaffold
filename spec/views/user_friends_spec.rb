@@ -28,32 +28,51 @@ RSpec.describe 'Main flow', type: :system do
   end
   describe 'Friend request' do
     it 'path is correct' do
-      test_friend
-      test_user
 
       # Access Home Page
       visit('/')
 
-      # Login as the user
+      click_link('Sign up')
+
+      # user Sign up
+      sleep 1
+      fill_in('user[name]', with: 'user')
       fill_in('user[email]', with: 'user@example.com')
       fill_in('user[password]', with: 'password')
-      click_button('Log in')
-      sleep 1
+      fill_in('user[password_confirmation]', with: 'password')
 
-      # Go to all users page
       sleep 1
-      click_link('All users')
-
-      # Request a new friend
-      sleep 5
-      click_button('Add As A Friend')
+      click_button('Sign up')
 
       # Logout
       sleep 1
       click_link('Sign out')
 
       # Login as the friend
-      fill_in('user[email]', with: 'friend@example.com')
+      sleep 1
+      click_link('Sign up')
+      sleep 1
+
+      fill_in('user[name]', with: 'Test')
+      fill_in('user[email]', with: 'test@email.com')
+      fill_in('user[password]', with: 'password')
+      fill_in('user[password_confirmation]', with: 'password')
+      sleep 1
+      click_button('Sign up')
+      sleep 1
+
+      click_link('All users')
+
+      # Request a new friend
+      sleep 1
+      click_link('Add as a Friend')
+
+      # Logout friend
+      sleep 1
+      click_link('Sign out')
+
+      sleep 1
+      fill_in('user[email]', with: 'user@example.com')
       fill_in('user[password]', with: 'password')
       click_button('Log in')
       sleep 1
@@ -61,12 +80,9 @@ RSpec.describe 'Main flow', type: :system do
       # Check check requests
       click_link('Friend Requests')
       sleep 1
-      click_button('Accept Request')
+      click_link('Accept Request')
       sleep 1
 
-      
-      # Logout friend
-      click_link('Sign out')
     end
   end
   describe 'create post' do

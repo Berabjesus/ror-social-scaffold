@@ -53,9 +53,11 @@ end
 group :test do
   gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
   gem 'rspec'
-  gem 'chromedriver-helper', '~> 2.1', '>= 2.1.1'
+  # gem 'chromedriver-helper', '~> 2.1', '>= 2.1.1'
+  gem 'chromedriver-helper', '1.2.0'
   gem "selenium-webdriver"
   gem 'capybara'
+  gem 'webdrivers'
 end
 
 group :development do
