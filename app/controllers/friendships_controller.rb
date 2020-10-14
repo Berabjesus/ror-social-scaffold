@@ -17,14 +17,14 @@ class FriendshipsController < ApplicationController
   def show; end
 
   def update
-    @friendship = Friendship.find_by(id: params[:id])
-    redirect_to users_path if @friendship.confirmed == false && @friendship.update(confirmed: true)
+    @friendship = Friendship.find(params[:id])
+    redirect_to users_path if @friendship.confirmed == false && @friendship.confirm_friend
   end
 
   def destroy
-    @friendship = Friendship.find(params[:id])
+    @friendship = Friendship.where(user_id: [params[:id], current_user.id], friend_id: [current_user.id, params[:id]])
 
-    if !@friendship.nil? && @friendship.destroy
+    if !@friendship.nil? && @friendship.each(&:destroy)
       redirect_to users_path
     else
       render 'users/index'
