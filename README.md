@@ -39,7 +39,7 @@ Setup database with:
 
 Install Bootstrap:
 
-```yarn bootstrap jquery popper.js```
+```yarn add bootstrap jquery popper.js```
 
 ### Github Actions
 
