@@ -61,17 +61,16 @@ Start server with:
 Open `http://localhost:3000/` in your browser.
 
 ### Run tests
-> Uncomment the code below on the test group of the gemfile for Linux OS
+- Uncomment the code below on the test group of the gemfile for Linux OS
 ```gem 'chromedriver-helper', '~> 2.1', '>= 2.1.1'```
 
-> Uncomment the code below on the test group of the gemfile for windows OS
+- Uncomment the code below on the test group of the gemfile for windows OS
 ``` gem 'chromedriver-helper', '1.2.0'```
 
-> Run ```bundle install```
+- Run ```bundle install```
 
->Run  ```bundle exec rspec ``` to run the tests.
+- Run  ```bundle exec rspec ``` to run the tests.
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
 ### Deployment
 
