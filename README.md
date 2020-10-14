@@ -2,15 +2,19 @@
 
 > This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
 
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![License: MIT][license-shield]][license-url]
+
+
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
 
-## Live Demo
-
-TBA
-
+## See the Live version here - > [Live Link](https://enigmatic-bastion-44052.herokuapp.com/)
 
 ## Getting Started
 
@@ -74,17 +78,34 @@ Open `http://localhost:3000/` in your browser.
 
 ### Deployment
 
-TBA
+- Create a heroku account and install the heroku CLI
+- Go to the root of this project directory and run `heroku login` from a terminal.
+- The browser will open up a login interface, click on login.
+- Make sure the current branch is the `master` branch
+- Now run the `heroku create` command to add a new remote address for the project.
+- Check this by running the `git remote -v` 
+- Run the `git push heroku master -f` command
+- Run the `heroku run rails db:migrate` command
 
 ## Authors
 
-TBA
+👤 **Peris Ndanu**
+
+- Github: [@mimipeshy](https://github.com/mimipeshy)
+- Linkedin: [Peris Ndanu](https://www.linkedin.com/in/peris-ndanu-405083193/)
+
+👤 **Bereket Beshane**
+
+- Github: [@berabjesus](https://github.com/Berabjesus)
+- Twitter: [@bereket_ababu_b](https://twitter.com/bereket_ababu_b)
+- Linkedin: [linkedin](https://www.linkedin.com/in/bereket-beshane-a1b75a1a9/)
+
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/Berabjesus/ror-social-scaffold/issues).
 
 ## Show your support
 
@@ -92,9 +113,25 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- Microverse
+- Heroku
 
 ## 📝 License
 
-TBA
+None
+
+
+[contributors-shield]: https://img.shields.io/github/contributors/Berabjesus/ror-social-scaffold
+[contributors-url]: https://github.com/Berabjesus/ror-social-scaffold/contributors
+[forks-shield]: https://img.shields.io/github/forks/Berabjesus/Private-Events
+[forks-url]:https://github.com/Berabjesus/ror-social-scaffold/network/members
+[stars-shield]: https://img.shields.io/github/stars/Berabjesus/Private-Events
+[stars-url]: https://github.com/Berabjesus/ror-social-scaffold/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Berabjesus/Private-Events
+[issues-url]: https://github.com/Berabjesus/ror-social-scaffold/issues
+[license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
+[license-url]: https://github.com/Berabjesus/ror-social-scaffold/development/LICENSE
+
+
+
 
