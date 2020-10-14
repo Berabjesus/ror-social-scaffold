@@ -80,14 +80,13 @@ RSpec.describe 'Main flow', type: :system do
       click_link('Friend Requests')
       sleep 1
       click_link('Accept Request')
-      sleep 1       
+      sleep 1
 
-      #reject requests
+      # reject requests
       click_link('Your Friends')
       sleep 1
       click_link('Unfriend')
       sleep 1
-  
     end
   end
   describe 'create post' do

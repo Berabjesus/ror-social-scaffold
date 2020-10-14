@@ -22,9 +22,9 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friendship = Friendship.where(user_id: [params[:id], current_user.id], friend_id:[current_user.id, params[:id]] )
+    @friendship = Friendship.where(user_id: [params[:id], current_user.id], friend_id: [current_user.id, params[:id]])
 
-    if !@friendship.nil? && (@friendship.each {|friendship| friendship.destroy})
+    if !@friendship.nil? && @friendship.each(&:destroy)
       redirect_to users_path
     else
       render 'users/index'
