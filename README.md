@@ -123,11 +123,11 @@ None
 
 [contributors-shield]: https://img.shields.io/github/contributors/Berabjesus/ror-social-scaffold
 [contributors-url]: https://github.com/Berabjesus/ror-social-scaffold/contributors
-[forks-shield]: https://img.shields.io/github/forks/Berabjesus/Private-Events
+[forks-shield]: https://img.shields.io/github/forks/Berabjesus/ror-social-scaffold
 [forks-url]:https://github.com/Berabjesus/ror-social-scaffold/network/members
-[stars-shield]: https://img.shields.io/github/stars/Berabjesus/Private-Events
+[stars-shield]: https://img.shields.io/github/stars/Berabjesus/ror-social-scaffold
 [stars-url]: https://github.com/Berabjesus/ror-social-scaffold/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Berabjesus/Private-Events
+[issues-shield]: https://img.shields.io/github/issues/Berabjesus/ror-social-scaffold
 [issues-url]: https://github.com/Berabjesus/ror-social-scaffold/issues
 [license-shield]: https://img.shields.io/badge/License-MIT-yellow.svg
 [license-url]: https://github.com/Berabjesus/ror-social-scaffold/development/LICENSE
