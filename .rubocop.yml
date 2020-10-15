@@ -1,12 +1,12 @@
 AllCops:
   Exclude:
     - "db/**/*"
-    - "bin/*"
+    - "bin/*" 
     - "config/**/*"
     - "Guardfile"
     - "Rakefile"
     - "node_modules/**/*"
-
+    - "node_modules/**/*.{css,scss}"
   DisplayCopNames: true
 
 Layout/LineLength:
@@ -24,8 +24,8 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
-  ExcludedMethods: ["describe"]
-  Max: 30
+  ExcludedMethods: ['describe']
+  Max: 40
 
 Style/Documentation:
   Enabled: false

@@ -1,0 +1,16 @@
+<div>
+  <h2>You have <%= pluralize(current_user.friends.count, 'friend')%> </h2>
+  <% current_user.friends.each do |user|%>
+  <div class="border rounded p-3 d-flex flex-column">
+    <div class="d-flex justify-content-between">
+      <%= link_to user_path(user), class: 'text-decoration-none' do%>
+        <h4><%= user.name%></h4>
+      <%end%>
+      <%= link_to 'See Profile',  user_path(user), class: 'btn btn-info mx-5' %>
+    </div>
+    <div class="mt-3 d-flex justify-content-between">
+      <%= add_friend_btn user%>
+    </div>  
+  </div>
+<%end%>
+</div>

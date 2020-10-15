@@ -10,12 +10,12 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.12'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+# gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-
+gem 'nokogiri', '~> 1.10', '>= 1.10.10'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -30,7 +30,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'sass-rails', '~> 6.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -42,10 +43,24 @@ gem 'devise'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # gem 'chromedriver-helper'
+  # gem "selenium-webdriver"
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :test do
+  gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
   gem 'rspec'
+  # For Linux OS
+  # gem 'chromedriver-helper', '~> 2.1', '>= 2.1.1'
+
+  # For Windows OS
+  # gem 'chromedriver-helper', '1.2.0'
+
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
 end
 
 group :development do

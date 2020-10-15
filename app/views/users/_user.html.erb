@@ -1,6 +1,15 @@
-<li>
-  Name: <%= user.name %>
-  <span class="profile-link">
-    <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-  </span>
-</li>
+<div class="border mb-2 p-1">
+  <li class="">
+    <div class=" mb-2">
+      <h2 class="h4">
+        Name: <%= user.name %>
+      </h2>
+    </div>
+    <span class="profile-link">
+      <%= link_to 'See Profile',  user_path(user), class: 'btn btn-info mr-2' %>
+    </span>
+    <span>
+      <%= add_friend_btn user%>
+    </span>
+  </li>
+</div>
